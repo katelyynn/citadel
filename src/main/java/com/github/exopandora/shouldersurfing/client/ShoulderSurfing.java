@@ -79,7 +79,7 @@ public class ShoulderSurfing implements IShoulderSurfing {
 		this.isCameraDecoupled = computeIsCameraDecoupled(cameraEntity, this.isShoulderSurfing, this.isAiming);
 		if (this.isShoulderSurfing && player != null) {
 			this.isLookFollowingCrosshairTarget = computeIsLookFollowingCrosshairTarget(cameraEntity, this.isAiming);
-			this.isFreeLooking = InputHandler.FREE_LOOK.isDown() && !this.isAiming;
+			this.isFreeLooking = false;
 			this.camera.tick();
 			if (!this.isFreeLooking && cameraEntity == player) {
 				if (this.isLookFollowingCrosshairTarget()) {

@@ -21,6 +21,7 @@
     "ItemInHandRendererMixin",
     "KeyMappingMixin",
     "LocalPlayerMixin",
-    "MouseHandlerMixin"
+    "MouseHandlerMixin",
+    "ui.KeyBindsListMixin"
   ]
 }

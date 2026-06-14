@@ -19,28 +19,6 @@ import org.lwjgl.glfw.GLFW;
 import static com.github.exopandora.shouldersurfing.ShoulderSurfingCommon.MOD_ID;
 
 public class InputHandler {
-	public static final KeyMapping.Category GENERAL = KeyMapping.Category.register(Identifier.fromNamespaceAndPath(MOD_ID, "general"));
-	
-	public static final KeyMapping CAMERA_LEFT = createKeyMapping("adjust_camera_left", GLFW.GLFW_KEY_LEFT);
-	public static final KeyMapping CAMERA_RIGHT = createKeyMapping("adjust_camera_right", GLFW.GLFW_KEY_RIGHT);
-	public static final KeyMapping CAMERA_IN = createKeyMapping("adjust_camera_in", GLFW.GLFW_KEY_UP);
-	public static final KeyMapping CAMERA_OUT = createKeyMapping("adjust_camera_out", GLFW.GLFW_KEY_DOWN);
-	public static final KeyMapping CAMERA_UP = createKeyMapping("adjust_camera_up", GLFW.GLFW_KEY_PAGE_UP);
-	public static final KeyMapping CAMERA_DOWN = createKeyMapping("adjust_camera_down", GLFW.GLFW_KEY_PAGE_DOWN);
-	public static final KeyMapping SWAP_SHOULDER = createKeyMapping("swap_shoulder", GLFW.GLFW_KEY_U);
-	public static final KeyMapping TOGGLE_FIRST_PERSON = createKeyMapping("toggle_first_person", InputConstants.UNKNOWN.getValue());
-	public static final KeyMapping TOGGLE_THIRD_PERSON_FRONT = createKeyMapping("toggle_third_person_front", InputConstants.UNKNOWN.getValue());
-	public static final KeyMapping TOGGLE_THIRD_PERSON_BACK = createKeyMapping("toggle_third_person_back", InputConstants.UNKNOWN.getValue());
-	public static final KeyMapping FREE_LOOK = createKeyMapping("free_look", GLFW.GLFW_KEY_LEFT_ALT);
-	public static final KeyMapping TOGGLE_CAMERA_COUPLING = createKeyMapping("toggle_camera_coupling", InputConstants.UNKNOWN.getValue());
-	public static final KeyMapping TOGGLE_X_OFFSET_PRESETS = createKeyMapping("toggle_x_offset_presets", InputConstants.UNKNOWN.getValue());
-	public static final KeyMapping TOGGLE_Y_OFFSET_PRESETS = createKeyMapping("toggle_y_offset_presets", InputConstants.UNKNOWN.getValue());
-	public static final KeyMapping TOGGLE_Z_OFFSET_PRESETS = createKeyMapping("toggle_z_offset_presets", InputConstants.UNKNOWN.getValue());
-	public static final KeyMapping ENTER_FIRST_PERSON = createKeyMapping("enter_first_person", InputConstants.UNKNOWN.getValue());
-	public static final KeyMapping ENTER_THIRD_PERSON_FRONT = createKeyMapping("enter_third_person_front", InputConstants.UNKNOWN.getValue());
-	public static final KeyMapping ENTER_THIRD_PERSON_BACK = createKeyMapping("enter_third_person_back", InputConstants.UNKNOWN.getValue());
-	public static final KeyMapping ENTER_SHOULDER_SURFING = createKeyMapping("enter_shoulder_surfing", InputConstants.UNKNOWN.getValue());
-	
 	private final ShoulderSurfing instance;
 	
 	public InputHandler(ShoulderSurfing instance) {
@@ -50,108 +28,8 @@ public class InputHandler {
 	public void tick() {
 		Options options = Minecraft.getInstance().options;
 		
-		while (TOGGLE_FIRST_PERSON.consumeClick()) {
-			if (this.instance.isShoulderSurfing()) {
-				this.instance.changePerspective(Perspective.FIRST_PERSON);
-			} else {
-				this.instance.changePerspective(Perspective.SHOULDER_SURFING);
-			}
-		}
-		
-		while (TOGGLE_THIRD_PERSON_FRONT.consumeClick()) {
-			if (this.instance.isShoulderSurfing()) {
-				this.instance.changePerspective(Perspective.THIRD_PERSON_FRONT);
-			} else {
-				this.instance.changePerspective(Perspective.SHOULDER_SURFING);
-			}
-		}
-		
-		while (TOGGLE_THIRD_PERSON_BACK.consumeClick()) {
-			if (this.instance.isShoulderSurfing()) {
-				this.instance.changePerspective(Perspective.THIRD_PERSON_BACK);
-			} else {
-				this.instance.changePerspective(Perspective.SHOULDER_SURFING);
-			}
-		}
-		
-		while (ENTER_FIRST_PERSON.consumeClick()) {
-			this.instance.changePerspective(Perspective.FIRST_PERSON);
-		}
-		
-		while (ENTER_THIRD_PERSON_FRONT.consumeClick()) {
-			this.instance.changePerspective(Perspective.THIRD_PERSON_FRONT);
-		}
-		
-		while (ENTER_THIRD_PERSON_BACK.consumeClick()) {
-			this.instance.changePerspective(Perspective.THIRD_PERSON_BACK);
-		}
-		
-		while (ENTER_SHOULDER_SURFING.consumeClick()) {
-			this.instance.changePerspective(Perspective.SHOULDER_SURFING);
-		}
-		
-		while (CAMERA_LEFT.consumeClick()) {
-			if (this.instance.isShoulderSurfing()) {
-				Config.CLIENT.getCameraConfig().adjustCameraLeft();
-			}
-		}
-		
-		while (CAMERA_RIGHT.consumeClick()) {
-			if (this.instance.isShoulderSurfing()) {
-				Config.CLIENT.getCameraConfig().adjustCameraRight();
-			}
-		}
-		
-		while (CAMERA_OUT.consumeClick()) {
-			if (this.instance.isShoulderSurfing()) {
-				Config.CLIENT.getCameraConfig().adjustCameraOut();
-			}
-		}
-		
-		while (CAMERA_IN.consumeClick()) {
-			if (this.instance.isShoulderSurfing()) {
-				Config.CLIENT.getCameraConfig().adjustCameraIn();
-			}
-		}
-		
-		while (CAMERA_UP.consumeClick()) {
-			if (this.instance.isShoulderSurfing()) {
-				Config.CLIENT.getCameraConfig().adjustCameraUp();
-			}
-		}
-		
-		while (CAMERA_DOWN.consumeClick()) {
-			if (this.instance.isShoulderSurfing()) {
-				Config.CLIENT.getCameraConfig().adjustCameraDown();
-			}
-		}
-		
-		while (SWAP_SHOULDER.consumeClick()) {
-			if (this.instance.isShoulderSurfing()) {
-				this.instance.swapShoulder();
-			}
-		}
-		
 		while (options.keyTogglePerspective.consumeClick()) {
 			this.instance.togglePerspective();
-		}
-		
-		while (FREE_LOOK.consumeClick()) ;
-		
-		while (TOGGLE_CAMERA_COUPLING.consumeClick()) {
-			this.instance.toggleCameraCoupling();
-		}
-		
-		while (TOGGLE_X_OFFSET_PRESETS.consumeClick()) {
-			this.instance.toggleOffsetXPreset();
-		}
-		
-		while (TOGGLE_Y_OFFSET_PRESETS.consumeClick()) {
-			this.instance.toggleOffsetYPreset();
-		}
-		
-		while (TOGGLE_Z_OFFSET_PRESETS.consumeClick()) {
-			this.instance.toggleOffsetZPreset();
 		}
 	}
 	
@@ -189,9 +67,5 @@ public class InputHandler {
 			Vec2f rotated = moveVector.rotateDegrees(Mth.degreesDifference(yRot, camera.getYRot()));
 			((ClientInputAccessor) input).setMoveVector(rotated.toVec2());
 		}
-	}
-	
-	private static @NotNull KeyMapping createKeyMapping(String key, int keyCode) {
-		return new KeyMapping("key." + MOD_ID + "." + key, keyCode, GENERAL);
 	}
 }

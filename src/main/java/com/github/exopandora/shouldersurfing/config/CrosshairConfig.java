@@ -60,7 +60,7 @@ public class CrosshairConfig implements ICrosshairConfig {
 	
 	@Override
 	public boolean isObstructionIndicatorEnabled() {
-		return true;
+		return false;
 	}
 	
 	@Override

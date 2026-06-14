@@ -19,7 +19,7 @@ public class CameraConfig implements ICameraConfig {
 	
 	@Override
 	public double getOffsetZ() {
-		return 4.0;
+		return 5.0;
 	}
 	
 	@Override
@@ -274,12 +274,12 @@ public class CameraConfig implements ICameraConfig {
 	
 	@Override
 	public boolean isFovOverrideEnabled() {
-		return false;
+		return true;
 	}
 	
 	@Override
 	public float getFovOverride() {
-		return 70.0f;
+		return 68.0f;
 	}
 	
 	@Override
@@ -332,30 +332,6 @@ public class CameraConfig implements ICameraConfig {
 		return 5.0;
 	}
 	
-	public void adjustCameraLeft() {
-		return;
-	}
-	
-	public void adjustCameraRight() {
-		return;
-	}
-	
-	public void adjustCameraUp() {
-		return;
-	}
-	
-	public void adjustCameraDown() {
-		return;
-	}
-	
-	public void adjustCameraIn() {
-		return;
-	}
-	
-	public void adjustCameraOut() {
-		return;
-	}
-	
 	public void toggleOffsetXPreset() {
 		return;
 	}
@@ -366,26 +342,6 @@ public class CameraConfig implements ICameraConfig {
 	
 	public void toggleOffsetZPreset() {
 		return;
-	}
-	
-	private void toggleOffsetPreset() {
-		return;
-	}
-	
-	private double addStep(double value, double max, boolean unlimited) {
-		double next = value + this.getCameraStepSize();
-		if (unlimited) {
-			return next;
-		}
-		return Math.min(next, max);
-	}
-	
-	private double subStep(double value, double min, boolean unlimited) {
-		double next = value - this.getCameraStepSize();
-		if (unlimited) {
-			return next;
-		}
-		return Math.max(next, min);
 	}
 	
 	public void swapShoulder() {

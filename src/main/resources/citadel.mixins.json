@@ -1,0 +1,26 @@
+{
+  "required": true,
+  "package": "moe.katelyn.citadel.mixin",
+  "compatibilityLevel": "JAVA_25",
+  "mixins": [
+    "CrossCollisionBlockMixin",
+    "ExampleMixin",
+    "LivingEntityMixin",
+    "MannequinMixin",
+    "OptionsMixin"
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  },
+  "overwrites": {
+    "requireAnnotations": true
+  },
+  "client": [
+    "CameraMixin",
+    "GuiMixin",
+    "ItemInHandRendererMixin",
+    "KeyMappingMixin",
+    "LocalPlayerMixin",
+    "MouseHandlerMixin"
+  ]
+}

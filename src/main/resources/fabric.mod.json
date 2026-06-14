@@ -1,0 +1,42 @@
+{
+	"schemaVersion": 1,
+	"id": "citadel",
+	"version": "${version}",
+	"name": "Citadel",
+	"description": "This is an example description! Tell everyone what your mod is about!",
+	"authors": [
+		"Me!"
+	],
+	"contact": {
+		"homepage": "https://fabricmc.net/",
+		"sources": "https://github.com/FabricMC/fabric-example-mod"
+	},
+	"license": "GPL-3.0",
+	"icon": "assets/citadel/icon.png",
+	"environment": "*",
+	"entrypoints": {
+		"main": [
+			"moe.katelyn.citadel.Citadel"
+		],
+		"fabric-datagen": [
+			"moe.katelyn.citadel.CitadelDataGenerator"
+		],
+		"client": [
+			"moe.katelyn.citadel.CitadelClient",
+			"com.github.exopandora.shouldersurfing.fabric.ShoulderSurfingFabric"
+		]
+	},
+	"mixins": [
+		"shouldersurfing.common.mixins.json",
+		"shouldersurfing.common.compat.mixins.json",
+		"shouldersurfing.fabric.mixins.json",
+		"shouldersurfing.fabric.compat.mixins.json",
+		"citadel.mixins.json"
+	],
+	"depends": {
+		"fabricloader": ">=0.19.3",
+		"minecraft": "~26.1.2",
+		"java": ">=25",
+		"fabric-api": "*"
+	}
+}

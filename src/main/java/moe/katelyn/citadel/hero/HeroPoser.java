@@ -7,9 +7,9 @@ import org.joml.Quaternionf;
 
 public class HeroPoser {
     public static void pose(AvatarRenderState state, Identifier hero) {
-        state.bodyRot = 0.0f;
-        state.yRot = -10.0f;
-        state.xRot = 10.0f;
+        state.bodyRot = -30.0f; // their body horizontally, 40 = left, -40 = right
+        state.yRot = 0.0f; // their head looking horizontally
+        state.xRot = 0.0f; // their head looking vertically
         state.scale = 1.4f;
 
         state.boundingBoxWidth = state.boundingBoxWidth / state.scale;
@@ -22,21 +22,7 @@ public class HeroPoser {
         state.showRightSleeve = true;
         state.showRightPants = true;
 
-        state.leftArmPose = HumanoidModel.ArmPose.EMPTY;
-        state.rightArmPose = HumanoidModel.ArmPose.EMPTY;
-
         switch (hero.getPath()) {
-            case "infernus":
-                state.bodyRot = -30.0f;
-                state.yRot = -20.0f;
-                state.xRot = 30.0f;
-                state.rightArmPose = HumanoidModel.ArmPose.TOOT_HORN;
-                break;
-            case "mina":
-                state.bodyRot = -25.0f;
-                state.yRot = 5.0f;
-                state.xRot = 15.0f;
-                break;
             default:
                 break;
         }
@@ -46,9 +32,6 @@ public class HeroPoser {
         Quaternionf rotation = null;
 
         switch (hero.getPath()) {
-            case "infernus":
-                rotation = new Quaternionf().rotateZ(150.0f * (float) Math.PI);
-                break;
             default:
                 rotation = new Quaternionf().rotateZ(0.0f * (float) Math.PI);
                 break;
@@ -61,11 +44,8 @@ public class HeroPoser {
         Quaternionf rotation = null;
 
         switch (hero.getPath()) {
-            case "infernus":
-                rotation = new Quaternionf().rotateX(160.0f * (float) (Math.PI / 180.0));
-                break;
             default:
-                rotation = new Quaternionf().rotateX(150.0f * (float) (Math.PI / 180.0));
+                rotation = new Quaternionf().rotateX(200.0f * (float) (Math.PI / 180.0));
                 break;
         }
 

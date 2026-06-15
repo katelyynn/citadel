@@ -6,6 +6,8 @@ import net.minecraft.client.model.HumanoidModel;
 import net.minecraft.client.model.geom.ModelPart;
 import net.minecraft.client.renderer.entity.state.HumanoidRenderState;
 import net.minecraft.resources.Identifier;
+import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.Items;
 import org.spongepowered.asm.mixin.Final;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Shadow;
@@ -43,7 +45,13 @@ public abstract class HumanoidModelMixin {
                 ci.cancel();
                 break;
             case "infernus":
-                rightArm.xRot = -1.6f;
+                rightArm.xRot = -0.8f;
+                rightArm.yRot = 0.0f;
+                rightArm.zRot = 0.0f;
+                ci.cancel();
+                break;
+            case "graves":
+                rightArm.xRot = -0.1f;
                 rightArm.yRot = 0.0f;
                 rightArm.zRot = 0.0f;
                 ci.cancel();
@@ -63,9 +71,21 @@ public abstract class HumanoidModelMixin {
 
         switch (heroPath) {
             case "mina":
-                leftArm.xRot = -1.3f;
+                leftArm.xRot = -0.6f;
                 leftArm.yRot = 0.0f;
                 leftArm.zRot = 0.0f;
+                ci.cancel();
+                break;
+            case "infernus":
+                leftArm.xRot = 0.0f;
+                leftArm.yRot = 0.0f;
+                leftArm.zRot = 0.0f;
+                ci.cancel();
+                break;
+            case "graves":
+                leftArm.xRot = -0.2f;
+                leftArm.yRot = 0.0f;
+                leftArm.zRot = 0.2f;
                 ci.cancel();
                 break;
         }

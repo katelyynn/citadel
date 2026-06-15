@@ -22,6 +22,7 @@
     "KeyMappingMixin",
     "LocalPlayerMixin",
     "MouseHandlerMixin",
+    "player.ArmedEntityRenderStateMixin",
     "player.AvatarRendererMixin",
     "player.HumanoidModelMixin",
     "player.HumanoidRenderStateMixin",

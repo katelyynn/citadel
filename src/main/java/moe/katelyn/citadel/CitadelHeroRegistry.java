@@ -1,5 +1,6 @@
 package moe.katelyn.citadel;
 
+import moe.katelyn.citadel.hero.Graves;
 import moe.katelyn.citadel.hero.Infernus;
 import moe.katelyn.citadel.hero.Mina;
 import moe.katelyn.citadel.hero.None;
@@ -44,6 +45,7 @@ public class CitadelHeroRegistry {
         None.register();
         Infernus.register();
         Mina.register();
+        Graves.register();
 
         Citadel.LOGGER.info("finished registering heroes");
     }

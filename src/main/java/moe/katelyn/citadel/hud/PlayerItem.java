@@ -80,7 +80,7 @@ public class PlayerItem {
             graphics.fillGradient(x, y, x + PlayerList.WIDTH, y + PlayerList.HEIGHT + PlayerList.PADDING, team.getColour(), 0x25111111);
         }
 
-        int avatarExtra = 10;
+        int avatarExtra = 5;
 
         int avatarX = x + PlayerList.AVATAR_X;
         int avatarY = y + PlayerList.PADDING;

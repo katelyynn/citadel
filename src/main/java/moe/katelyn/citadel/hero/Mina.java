@@ -1,15 +1,19 @@
 package moe.katelyn.citadel.hero;
 
 import moe.katelyn.citadel.*;
+import moe.katelyn.citadel.gen.ItemModelGenerator;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.Identifier;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.projectile.throwableitemprojectile.Snowball;
+import net.minecraft.world.item.Item;
 import net.minecraft.world.phys.Vec3;
 
 import java.util.List;
 
 public class Mina {
+    public static final Item UMBRELLA = CitadelItems.register("mina_umbrella", Item::new, new Item.Properties());
+
     public static void register() {
         Identifier id = Identifier.fromNamespaceAndPath(Citadel.MOD_ID, "mina");
 

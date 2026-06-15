@@ -71,7 +71,7 @@ public abstract class HumanoidModelMixin {
 
         switch (heroPath) {
             case "mina":
-                leftArm.xRot = -0.6f;
+                leftArm.xRot = -0.8f;
                 leftArm.yRot = 0.0f;
                 leftArm.zRot = 0.0f;
                 ci.cancel();

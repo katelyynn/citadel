@@ -31,5 +31,11 @@
 				"down": {"uv": [0, 0, 12, 12], "texture": "#missing"}
 			}
 		}
-	]
+	],
+	"display": {
+		"thirdperson_righthand": {
+			"rotation": [141, 56, 4],
+			"translation": [-1, -9.5, 5.25]
+		}
+	}
 }

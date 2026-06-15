@@ -9,5 +9,6 @@ public class CitadelDataGenerator implements DataGeneratorEntrypoint {
 		FabricDataGenerator.Pack pack = fabricDataGenerator.createPack();
 
 		pack.addProvider(CitadelTranslations::new);
+		pack.addProvider(CitadelModelProvider::new);
 	}
 }

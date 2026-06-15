@@ -116,6 +116,8 @@ public class Citadel implements ModInitializer {
 		registerNetworking();
 		registerTicks();
 		registerCommands();
+
+		CitadelItems.init();
 	}
 
 	private void registerCommands() {

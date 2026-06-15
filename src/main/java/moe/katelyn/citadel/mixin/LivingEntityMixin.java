@@ -1,6 +1,7 @@
 package moe.katelyn.citadel.mixin;
 
 import moe.katelyn.citadel.CitadelClient;
+import moe.katelyn.citadel.hero.Mina;
 import net.minecraft.resources.Identifier;
 import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.entity.HumanoidArm;
@@ -36,7 +37,7 @@ public abstract class LivingEntityMixin {
                 if (arm == HumanoidArm.LEFT) {
                     cir.setReturnValue(new ItemStack(Items.AMETHYST_SHARD, 1));
                 } else {
-                    cir.setReturnValue(new ItemStack(Items.STONE_AXE, 1));
+                    cir.setReturnValue(new ItemStack(Mina.UMBRELLA, 1));
                 }
                 break;
             case "infernus":

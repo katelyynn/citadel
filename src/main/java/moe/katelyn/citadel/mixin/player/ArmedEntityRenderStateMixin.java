@@ -22,7 +22,7 @@ import java.util.UUID;
 
 @Mixin(ArmedEntityRenderState.class)
 public class ArmedEntityRenderStateMixin {
-    @Inject(method = "extractArmedEntityRenderState", at = @At("RETURN"))
+    @Inject(method = "extractArmedEntityRenderState", at = @At("RETURN"), cancellable = true)
     private static void onExtractRenderState(LivingEntity entity, ArmedEntityRenderState state, ItemModelResolver itemModelResolver, float partialTicks, CallbackInfo ci) {
         UUID uuid = entity.getUUID();
         String hero = CitadelClient.getPlayerHero(uuid);
@@ -48,5 +48,7 @@ public class ArmedEntityRenderStateMixin {
                 state.rightHandItemStack = new ItemStack(Items.BLAZE_ROD, 1);
                 break;
         }
+
+        ci.cancel();
     }
 }

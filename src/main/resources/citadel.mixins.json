@@ -22,6 +22,9 @@
     "KeyMappingMixin",
     "LocalPlayerMixin",
     "MouseHandlerMixin",
+    "player.AvatarRendererMixin",
+    "player.HumanoidModelMixin",
+    "player.HumanoidRenderStateMixin",
     "ui.KeyBindsListMixin"
   ]
 }

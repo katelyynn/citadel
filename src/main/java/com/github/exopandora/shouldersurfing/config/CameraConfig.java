@@ -9,7 +9,7 @@ import java.util.List;
 public class CameraConfig implements ICameraConfig {
 	@Override
 	public double getOffsetX() {
-		return -0.75;
+		return -1.1;
 	}
 	
 	@Override
@@ -19,7 +19,7 @@ public class CameraConfig implements ICameraConfig {
 	
 	@Override
 	public double getOffsetZ() {
-		return 5.0;
+		return 4.0;
 	}
 	
 	@Override
@@ -279,7 +279,7 @@ public class CameraConfig implements ICameraConfig {
 	
 	@Override
 	public float getFovOverride() {
-		return 68.0f;
+		return 75.0f;
 	}
 	
 	@Override
